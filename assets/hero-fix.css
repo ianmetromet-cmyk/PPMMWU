@@ -1,38 +1,43 @@
 /* Homepage portrait sizing correction.
-   Size cutout images by stage height rather than column width so their
-   different source aspect ratios cannot make them overflow the hero. */
+   Keep both worker cutouts visibly smaller and contained within the hero. */
 
 .hero-grid {
-  min-height: 620px;
+  min-height: 600px;
 }
 
 .portraits {
-  min-height: 620px;
+  min-height: 600px;
   overflow: hidden;
 }
 
 .portrait {
+  position: absolute;
   width: auto !important;
   max-width: none;
   object-fit: contain;
   object-position: bottom;
-  bottom: -9%;
+  bottom: -3%;
 }
 
+/* Foreground worker: intentionally reduced from the previous ~91% scale. */
 .portrait.glasses {
-  height: 91%;
-  right: 0;
+  height: 69%;
+  right: 4%;
+  z-index: 1;
+  filter: grayscale(1) contrast(1.1);
 }
 
+/* Second worker stays slightly smaller and farther left. */
 .portrait.scrubs {
-  height: 84%;
-  left: 5%;
+  height: 61%;
+  left: 10%;
+  z-index: 2;
 }
 
 .portrait-halo {
-  width: min(30vw, 360px);
-  right: 9%;
-  top: 15%;
+  width: min(25vw, 310px);
+  right: 12%;
+  top: 19%;
 }
 
 @media (max-width: 960px) {
@@ -41,71 +46,67 @@
   }
 
   .portraits {
-    width: min(720px, 100%);
-    height: clamp(340px, 52vw, 430px);
+    width: min(700px, 100%);
+    height: clamp(320px, 46vw, 390px);
     min-height: 0;
     margin: 0 auto;
   }
 
   .portrait {
-    bottom: -10%;
+    bottom: -2%;
   }
 
   .portrait.glasses {
-    height: 96%;
-    right: 5%;
+    height: 74%;
+    right: 9%;
   }
 
   .portrait.scrubs {
-    height: 88%;
-    left: 8%;
+    height: 65%;
+    left: 12%;
   }
 
   .portrait-halo {
-    width: min(42vw, 300px);
-    right: 12%;
-    top: 8%;
+    width: min(36vw, 255px);
+    right: 16%;
+    top: 13%;
   }
 }
 
 @media (max-width: 700px) {
   .portraits {
-    height: clamp(300px, 58vw, 360px);
-  }
-
-  .portrait {
-    bottom: -9%;
+    height: clamp(270px, 52vw, 320px);
   }
 
   .portrait.glasses {
-    height: 94%;
-    right: 1%;
+    height: 70%;
+    right: 7%;
   }
 
   .portrait.scrubs {
-    height: 84%;
-    left: 3%;
+    height: 61%;
+    left: 9%;
   }
 
   .portrait-halo {
-    width: min(47vw, 240px);
-    right: 9%;
-    top: 8%;
+    width: min(42vw, 210px);
+    right: 13%;
+    top: 14%;
   }
 }
 
 @media (max-width: 440px) {
   .portraits {
-    height: 285px;
+    height: 250px;
   }
 
   .portrait.glasses {
-    height: 91%;
-    right: -3%;
+    height: 68%;
+    right: 3%;
   }
 
   .portrait.scrubs {
-    height: 80%;
-    left: 0;
+    height: 58%;
+    left: 5%;
   }
 }
