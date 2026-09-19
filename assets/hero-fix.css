@@ -1,0 +1,111 @@
+/* Homepage portrait sizing correction.
+   Size cutout images by stage height rather than column width so their
+   different source aspect ratios cannot make them overflow the hero. */
+
+.hero-grid {
+  min-height: 620px;
+}
+
+.portraits {
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.portrait {
+  width: auto !important;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom;
+  bottom: -9%;
+}
+
+.portrait.glasses {
+  height: 91%;
+  right: 0;
+}
+
+.portrait.scrubs {
+  height: 84%;
+  left: 5%;
+}
+
+.portrait-halo {
+  width: min(30vw, 360px);
+  right: 9%;
+  top: 15%;
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    min-height: 0;
+  }
+
+  .portraits {
+    width: min(720px, 100%);
+    height: clamp(340px, 52vw, 430px);
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .portrait {
+    bottom: -10%;
+  }
+
+  .portrait.glasses {
+    height: 96%;
+    right: 5%;
+  }
+
+  .portrait.scrubs {
+    height: 88%;
+    left: 8%;
+  }
+
+  .portrait-halo {
+    width: min(42vw, 300px);
+    right: 12%;
+    top: 8%;
+  }
+}
+
+@media (max-width: 700px) {
+  .portraits {
+    height: clamp(300px, 58vw, 360px);
+  }
+
+  .portrait {
+    bottom: -9%;
+  }
+
+  .portrait.glasses {
+    height: 94%;
+    right: 1%;
+  }
+
+  .portrait.scrubs {
+    height: 84%;
+    left: 3%;
+  }
+
+  .portrait-halo {
+    width: min(47vw, 240px);
+    right: 9%;
+    top: 8%;
+  }
+}
+
+@media (max-width: 440px) {
+  .portraits {
+    height: 285px;
+  }
+
+  .portrait.glasses {
+    height: 91%;
+    right: -3%;
+  }
+
+  .portrait.scrubs {
+    height: 80%;
+    left: 0;
+  }
+}
