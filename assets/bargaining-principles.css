@@ -1,0 +1,28 @@
+/* Bargaining principles / hosted EveryAction form */
+.bargaining-hero {
+  background: linear-gradient(132deg, var(--plum) 0 61%, var(--magenta) 61% 100%);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+.bargaining-hero .narrow { max-width: 1060px; }
+.bargaining-hero h1 { font-size: clamp(3.5rem, 9vw, 7.3rem); }
+.bargaining-hero p:last-child { max-width: 850px; }
+.bargaining-content { background: var(--blush); padding: clamp(2.5rem, 6vw, 5rem) 0; }
+.bargaining-shell { max-width: 1120px; }
+.bargaining-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 2.2rem; }
+.bargaining-heading > div { max-width: 740px; }
+.bargaining-heading h2 { font-size: clamp(3rem, 6.5vw, 5.1rem); }
+.bargaining-heading h2 span { color: var(--orange-text); }
+.bargaining-heading p:not(.eyebrow) { font-size: 1.05rem; font-weight: 700; max-width: 720px; }
+.bargaining-heading .button { flex-shrink: 0; text-align: center; }
+.form-embed-wrap { border: 3px solid var(--ink); background: #fff; box-shadow: 9px 9px 0 var(--ink); width: 100%; overflow: hidden; }
+.bargaining-frame { display: block; width: 100%; height: 2700px; border: 0; background: #fff; }
+.embed-note { margin: 2rem 0 0; font-weight: 700; }
+.embed-note a { font-weight: 900; text-underline-offset: .2em; }
+@media (max-width: 960px) { .bargaining-heading { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 700px) {
+  .bargaining-hero h1 { font-size: clamp(3.3rem, 15vw, 5.2rem); }
+  .bargaining-heading { gap: 1.1rem; }
+  .bargaining-heading h2 { font-size: clamp(2.7rem, 12vw, 4rem); }
+  .bargaining-frame { height: 3400px; }
+  .form-embed-wrap { box-shadow: 5px 5px 0 var(--ink); }
+}
